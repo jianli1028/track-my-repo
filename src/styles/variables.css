@@ -2,10 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
 
 :root {
-    --primary: cadetblue;
-    --secondary: olive;
+    --primary: purple;
+    --secondary: rgb(172, 44, 76);
     --text-primary: white;
-    --text-secondary: cadetblue;
+    --text-secondary: rgb(238, 240, 138);
     --opacity: rgba(255,255,255,0.5);
     --font-accent: 'Waiting for the Sunrise', cursive;
     --font-primary: 'Raleway', sans-serif;
