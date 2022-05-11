@@ -6,20 +6,20 @@ nav {
     justify-content: space-evenly;
 }
 
-a { 
+nav a { 
     color: var(--opacity);
     text-decoration: none;
     font-size: 1rem;
     text-transform: uppercase;
 }
 
-a:hover { 
+nav a:hover { 
     font-weight: 800;
-    color: white;
+    color: rgb(252, 248, 15);
 }
 
-.active {
-    color: white;
+nav .active {
+    color: rgb(255, 181, 97);
 }
 
-.home-link { color: wheat; }
+nav .home-link { color: wheat; }

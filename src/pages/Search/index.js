@@ -13,7 +13,7 @@ function Search(){
     const dispatch = useDispatch();
 
     useEffect(() =>{
-        dispatch(getResult("London"))
+        dispatch(getResult("Type your repo in the text box 😉"))
     }, []);
     
     const search = searchTerm => dispatch(getResult(searchTerm));

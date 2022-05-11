@@ -21,7 +21,7 @@ input, button {
 }
 
 [type="text"] {
-    border: 1px solid olive;
+    border: 1px solid rgb(158, 209, 16);
     border-radius: 5px;
     text-align: center;
 }
