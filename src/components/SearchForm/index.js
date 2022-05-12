@@ -1,26 +1,68 @@
-import React, { useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import './style.css';
+
 
 function SearchForm({ getResult }) {
 
-    const [ location, setLocation ] = useState("")
+    const [inputValue, setInputValue] = useState("");
+    const [submitValue, setSubmitValue] = useState("");
+    const [repoData, setRepoData] = useState([]);
 
-    const handleSubmit = e => {
+    useEffect(() => {
+
+        async function searchApi(searchString) {
+            try {
+                const result = await axios.get(`https://api.github.com/users/${searchString}/repos`);
+                setRepoData(result.data);
+                console.log(result.data);
+            } catch (err) {
+                console.log(err);
+            }
+        }
+
+        searchApi(submitValue);
+
+    }, [submitValue]);
+
+    function renderRepos() {
+        return repoData.map((s, i) =>
+            <>
+                <div className="repo-box">
+                    <li className="show-link"
+                        key={i}
+                        onClick={() => { navigate(`/search/${s.full_name}`) }}>
+                        {s.full_name}
+                    </li>
+                </div>
+            </>
+        )
+    };
+
+    function handleInput(e) {
+        const newValue = e.target.value;
+        setInputValue(newValue);
+    };
+
+    function handleSubmit(e) {
         e.preventDefault();
-        getResult(location);
-    }
-
-    const updateInput = e => {
-        const location = e.target.value 
-        setLocation(location)
-    }
-
+        setSubmitValue(inputValue);
+        setInputValue("");
+    };
 
     return (
-        <form role="form" onSubmit={handleSubmit}>
-            <input aria-label="Location" type="text" onChange={updateInput} value={location}/>
-            <input type="submit" value="Search" />
-        </form>
-    );
+        <>
+            <h2>Enter repo name</h2>
+            <p>Search and check how many public repo this git has!</p>
+            <form onSubmit={handleSubmit}>
+                <div><input type="text" onChange={handleInput} value={inputValue}></input></div>
+                <div className ="btn-spacing"><button type="submit">Search</button></div>
+                <div className="input-show-name">{submitValue}</div>
+            </form>
+            <ol>{renderRepos()}</ol>
+        </>
+    )
+
 };
 
 export default SearchForm;

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+
+.repo-box {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: auto;
+    width: 50%;
+    font-family: Roboto Flex;
+}
+
+.btn-spacing {
+    margin-bottom: 30px;
+}
+
+.input-show-name {
+    text-transform: uppercase;
+    color: rgb(82, 31, 79);
+    font-family: Roboto Flex;
+}

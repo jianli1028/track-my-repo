@@ -12,6 +12,7 @@ const About = () => {
             <p>This page is a scam</p>
             <p>Nothing works here</p>
             <p>We "got some help" from somebody else work</p>
+            <p>Both of us were just too rited to put more effort</p>
             <a href="https://www.youtube.com/watch?v=iik25wqIuFo" target="_blank"><h2>Definitely not this work!</h2></a>
         </div>
     );

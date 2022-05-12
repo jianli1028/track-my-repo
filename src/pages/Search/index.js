@@ -9,25 +9,18 @@ function Search(){
     const location = useSelector(state => state.location);
     const loading = useSelector(state => state.loading);
     const error = useSelector(state => state.error)
-
-    const dispatch = useDispatch();
-
-    useEffect(() =>{
-        dispatch(getResult("Type your repo in the text box 😉"))
-    }, []);
     
     const search = searchTerm => dispatch(getResult(searchTerm));
 
-    const renderResult = () => loading ? <p>Loading . . .</p> : <Result result={result}/>
+    // const renderResult = () => loading ? <p>Loading . . .</p> : <Result result={result}/>
 
     return (
         <div id="search">
-            Where do you want to search?
             <SearchForm getResult={search}/>
 
             <h1>{location}</h1>
 
-            { error ? <p role="alert">Oops there's been an error! {error}</p> : renderResult() }   
+            {/* { error ? <p role="alert">Oops there's been an error! {error}</p> : renderResult() }    */}
             
         </div>
     );
