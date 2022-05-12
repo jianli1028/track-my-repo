@@ -17,3 +17,7 @@
     color: rgb(82, 31, 79);
     font-family: Roboto Flex;
 }
+
+.show-link {
+    font-size: 1.5rem;
+}

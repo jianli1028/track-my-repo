@@ -8,6 +8,7 @@ function SearchForm({ getResult }) {
     const [inputValue, setInputValue] = useState("");
     const [submitValue, setSubmitValue] = useState("");
     const [repoData, setRepoData] = useState([]);
+    const [repoAvatar, setRepoAvatar] = useState( {avatar_url: ""} );
 
     useEffect(() => {
 
@@ -56,8 +57,10 @@ function SearchForm({ getResult }) {
             <p>Search and check how many public repo this git has!</p>
             <form onSubmit={handleSubmit}>
                 <div><input type="text" onChange={handleInput} value={inputValue}></input></div>
-                <div className ="btn-spacing"><button type="submit">Search</button></div>
-                <div className="input-show-name">{submitValue}</div>
+                <div className="btn-spacing"><button type="submit">Search</button></div>
+                <div className="input-show-name">
+                    {submitValue}
+                </div>
             </form>
             <ol>{renderRepos()}</ol>
         </>
